@@ -20,4 +20,12 @@ public class Ball : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision collision)    // 衝突時に処理(引数のcollision部分で何に衝突したときか指定できる（今回はすべてなので不要）)
+    {
+        if(collision.gameObject.tag == "Finish")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
