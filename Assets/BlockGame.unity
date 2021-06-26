@@ -719,12 +719,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 956813303}
-        m_MethodName: 
+      - m_Target: {fileID: 956813304}
+        m_MethodName: GameRetry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1399,6 +1399,7 @@ MonoBehaviour:
   - {fileID: 1807951717}
   - {fileID: 149553174}
   - {fileID: 1886616897}
+  gameOverUI: {fileID: 1596718539}
 --- !u!4 &956813305
 Transform:
   m_ObjectHideFlags: 0
@@ -1769,12 +1770,12 @@ GameObject:
   - component: {fileID: 1596718541}
   - component: {fileID: 1596718540}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UIGameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1596718540
 MonoBehaviour:
   m_ObjectHideFlags: 0

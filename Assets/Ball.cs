@@ -6,7 +6,8 @@ public class Ball : MonoBehaviour
 {
     public float speed = 1.0f;
     private Rigidbody myRigid;   // Unity上で設定した物理エンジンであるRigidbodyをmyRigidという変数に入れる予定のため、宣言しておく
-    
+    public GameManager myManager;   // 宣言しておく
+
     // Start is called before the first frame update
     void Start()  //初めの処理
     {
@@ -23,9 +24,13 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)    // 衝突時に処理(引数のcollision部分で何に衝突したときか指定できる（今回はすべてなので不要）)
     {
-        if(collision.gameObject.tag == "Finish")
+        if(collision.gameObject.tag == "Finish")    //Finishというタグがついたオブジェクトにあたったとき
         {
-            Destroy(this.gameObject);
-        }
+            Destroy(this.gameObject);   //このオブジェクトを消す
+
+            //myManager = new GameManager(); Unity側で設定しなくとも、インスタンス化すればできた
+
+            myManager.GameOver();  //myManagerでGameManagerクラスをインスタンス化していないが、Unity側でMy Managerというオプションができ、そこにGameManagerをスライドして設定することにより適応
+        }   // GameOverでGameManagerにGameOver()関数を命令
     }
 }

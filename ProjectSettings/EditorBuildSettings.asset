@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/BlockGame.unity
+    guid: 03abf42a561f48649a9a661c10b0f4bc
   m_configObjects: {}
