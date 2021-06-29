@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public Block[] blocks;  //[]は配列、Block[]はBlock型のものをblocksに複数格納することができる
     public GameObject gameOverUI;  // 宣言しておく
+    public GameObject gameClearUI;
+    private bool isGameClear = false;
     
     // Start is called before the first frame update
     void Start()
@@ -16,10 +18,16 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (DestroyAllBlocks())
+    { 
+        if (isGameClear != true)
         {
-            Debug.Log("ゲームクリア");    //Debug.Log: コンソールに表示される、主にバグ探しに使われる
+            if (DestroyAllBlocks())
+            {
+                // ゲームクリア
+                Debug.Log("ゲームクリア");    //Debug.Log: コンソールに表示される、主にバグ探しに使われる
+                gameClearUI.SetActive(true);
+                isGameClear = true;
+            }
         }
     }
 
